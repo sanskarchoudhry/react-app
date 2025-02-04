@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { Box, Button, HStack, VStack, Text, Heading } from "@chakra-ui/react";
+import { Button, HStack, VStack, Text, Heading } from "@chakra-ui/react";
 import { useSpring, animated } from "@react-spring/web";
 
 const Counter = () => {
   const [count, setCount] = useState(0);
 
-  // Dynamic background color transition based on count
   const backgroundStyle = useSpring({
     backgroundColor: `rgba(59, 130, 246, ${Math.min(count / 10, 1)})`, // Tailwind "blue-500"
     config: { tension: 150, friction: 20 },
