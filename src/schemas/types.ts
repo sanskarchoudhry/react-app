@@ -2,8 +2,8 @@ export interface formValues {
   firstName: string;
   lastName: string;
   userEmail: string;
-
   userPhone: number;
+
   userAddressFirst: string;
   userCountry: string;
   userState: string;
