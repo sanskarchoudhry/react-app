@@ -1,45 +1,40 @@
-import { useFormContext } from "react-hook-form";
-import { Input, VStack } from "@chakra-ui/react";
-import { Field } from "./ui/field";
+import { VStack } from "@chakra-ui/react";
 import AddressForm from "./form/AddressForm";
+import TextInput from "./form/TextInput";
+import FormWrapper from "./form/FormWrapper";
 
 function UserForm() {
-  const formMethods = useFormContext();
   return (
     <div>
-      <section>
+      <FormWrapper>
         <VStack>
-          <Field label="First name">
-            <Input
-              type="text"
-              placeholder="Enter your First Name"
-              {...formMethods.register("firstName")}
-            />
-          </Field>
-          <Field label="Last name">
-            <Input
-              type="text"
-              placeholder="Enter your Last Name"
-              {...formMethods.register("lastName")}
-            />
-          </Field>
-          <Field label="Email">
-            <Input
-              type="text"
-              placeholder="Enter your Email"
-              {...formMethods.register("userEmail")}
-            />
-          </Field>
-          <Field label="Phone">
-            <Input
-              type="number"
-              placeholder="Enter your Phone"
-              {...formMethods.register("userPhone")}
-            />
-          </Field>
+          <TextInput
+            inputLabel="First Name"
+            inputType="text"
+            inputName="firstName"
+          />
+          <TextInput
+            inputLabel="Last Name"
+            inputType="text"
+            inputName="lastName"
+          />
+
+          <TextInput
+            inputLabel="Email"
+            inputType="email"
+            inputName="userEmail"
+          />
+
+          <TextInput
+            inputLabel="Phone"
+            inputType="number"
+            inputName="userPhone"
+          />
         </VStack>
         <AddressForm />
-      </section>
+
+        <button>click</button>
+      </FormWrapper>
     </div>
   );
 }
